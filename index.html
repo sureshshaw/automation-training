@@ -60,11 +60,52 @@
             padding: 20px;
         }
 
-        .contact {
-            background: #e9ecef;
-            border-radius: 8px;
-            padding: 30px;
-        }
+        .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.contact textarea {
+    min-height: 120px;
+}
+
+.contact button {
+    background: #0b5ed7;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #084298;
+}
+
+.whatsapp {
+    margin-top: 30px;
+}
+
+.whatsapp a {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
     </style>
 </head>
 
@@ -142,12 +183,30 @@
 </section>
 
 <section class="contact">
-    <h2>Contact</h2>
-    <p>
-        📧 Email: your-email@example.com <br>
-        📞 Phone / WhatsApp: +91-XXXXXXXXXX
-    </p>
+    <h2>Contact Me</h2>
+
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="whatsapp">
+        <p>Or contact directly on WhatsApp</p>
+        <a href="https://wa.me/917044070309" target="_blank">
+            💬 Chat on WhatsApp
+        </a>
+    </div>
 </section>
+
 
 <footer>
     <p>© 2026 Automation Testing Training | All Rights Reserved</p>
